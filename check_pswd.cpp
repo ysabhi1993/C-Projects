@@ -1,6 +1,7 @@
+/*
 #include <iostream>
 #include <iomanip>
-#include <ctime>
+#include <time.h>
 #include <string>
 using namespace std;
 
@@ -23,10 +24,16 @@ int main()
 		case 'A':
 		{
 			check_pswd = get_password();
-			if(check_pswd == true)
+			if (check_pswd == true)
+			{
 				cout << "You have logged in " << endl;
+				system("pause");
+			}
 			else
+			{
 				cout << "Wrong password. Try again later " << endl;
+				system("pause");
+			}
 		break;		
 		} 			
 		case 'B':
@@ -37,9 +44,14 @@ int main()
 			{
 				cout << "Your password has been changed" << endl;
 				pswd = word;
+				system("pause");
 			}				
 			else
+			{
 				cout << "Try again later" << endl;
+				system("pause");
+			}
+				
 		break;		
 		}
 }
@@ -70,7 +82,11 @@ while (key_match == false)
 		}
 	}
 	else
+	{
 		break;
+		
+	}
+		
 }
 return key_match;
 }
@@ -107,9 +123,10 @@ string change_pswd()
 
 long timediff()
 {
-	static long sec = 0;
-	long old_time = sec;
+	static time_t sec = 0;
+	time_t old_time = sec;
 	time( &sec);
 	return (sec - old_time);
 }
 		
+		*/
